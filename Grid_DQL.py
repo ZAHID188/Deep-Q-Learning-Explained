@@ -51,7 +51,6 @@ class DQLAgent:
         model.add(Dense(24, activation='relu')) #hidden layer
         model.add(Dense(self.action_size,activation='linear')) #output layer
         model.compile(loss='mse', optimizer=Adam(learning_rate=self.learning_rate))
-        print("model ")
         return model
     def remember(self,state,action,reward,next_state,done):
         self.memory.append((state,action,reward,next_state,done))
@@ -61,8 +60,6 @@ class DQLAgent:
             print("random-",np.random.rand(),self.epsilon, random.randrange(self.action_size))
             return random.randrange(self.action_size)  # explore random move up, down, left, right
         state=np.reshape(state,[1,self.state_size])
-        print(state)
-        print("asd")
         q_values=self.model.predict(state)
         return np.argmax(q_values[0]) # Exploit : choose from what models knows
     
