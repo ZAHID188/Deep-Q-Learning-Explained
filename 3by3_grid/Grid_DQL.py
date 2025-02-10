@@ -9,7 +9,7 @@ class GridWorld:
     def __init__(self):
         self.grid = np.zeros((3, 3))
         self.goal = (2, 2)
-        self.state = (2, 1)
+        self.state = (0, 0)
 
     def reset(self):
         self.state = (0, 0)
