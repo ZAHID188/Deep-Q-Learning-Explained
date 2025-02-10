@@ -39,6 +39,7 @@ In classic Q-Learning, the agent learns a Q-table that stores Q-values for every
 $$
 
 Q(s, a) = Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right]
+
 $$
 
 Where:
