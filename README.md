@@ -1,9 +1,61 @@
-## Deep-Q-Learning 
-Environment: A 3x3 grid world.
+## Deep-Q-Learning
+Deep Q-Learning is a type of Reinforcement Learning (RL) algorithm. It combines Q-Learning (a classic RL algorithm) with Deep Neural Networks to help an agent learn how to make decisions in an environment
 
-- The agent starts at the top-left corner.
+- Goal: The `agent learns to take actions` that maximize its cumulative reward over time.
 
-- The goal is at the bottom-right corner.
+- How: It uses a `neural network` to `approximate the Q-values` (which represent how good an action is in a given state).
+
+**Key Concepts:**
+
+1. `Agent and Environment`:
+    - The agent is the learner or decision-maker
+    - The environment is the world the agent interacts with (e.g., a game, a robot’s surroundings).
+
+2. `State (s)`:
+    - A state represents the `current situation` of the `agent` in the environment.
+    - Example: In a game, the state could be the position of the player.
+
+3. `Action (a)`:
+    - An action is a move the `agent` can `take` in a given state.
+    - Example: In a game, actions could be "move left," "move right," etc.
+
+4. `Reward (r)`:
+    - A `reward` is feedback the `agent gets` after taking an action in a state.
+    - Example: If the agent reaches a goal, it gets a positive reward (+10). If it hits an obstacle, it gets a negative reward (-1).
+
+5. `Q-Value (Q(s, a))`:
+    - The Q-value represents how good an action *a* is in a state *s*
+    - It is the expected cumulative reward the agent will get if it takes action *a* in state *S* and follows the optimal policy afterward.
+
+6. `Policy`:
+    - A policy is a `strategy` the `agent` uses to decide which action to take in a given state.
+    - The `goal` is to `learn` the `optimal policy` that `maximizes` the cumulative `reward`.
+
+## Let's look at the mathmetical terms.
+
+1. Q-Learning Basics:
+In classic Q-Learning, the agent learns a Q-table that stores Q-values for every state-action pair. The Q-table is updated using the Bellman Equation:
+
+$$
+
+Q(s, a) = Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right]
+$$
+
+Where:
+- ( Q(s, a) ): Current Q-value for state ( s ) and action ( a ).
+- alpha : Learning rate (how quickly the agent learns).
+- ( r ): Reward received after taking action \( a \) in state \( s \).
+- ( gamma ): Discount factor (how much the agent cares about future rewards).
+- ( max_{a'} Q(s', a') ): Maximum Q-value for the next state \( s' \).
+
+
+## Example
+
+ A 3x3 grid world.
+
+- The agent starts at the top-left corner(0,0).
+
+- The goal is at the bottom-right corner(2,2).
 
 - The agent can move up, down, left, or right.
 
@@ -17,6 +69,19 @@ Objective: The agent learns to navigate the grid to reach the goal in the fewest
 ### Define the Environment (GridWorld)
 In this Grid World class, three key functions—init, reset, and step—serve as the core components of the environment.
 
+---
+
+### Python Version and Requirements
+
+This project uses **Python 3.12.0**. To install the required packages, run the following command:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+ Below check the Information About the  class `GridWorld`
 <details>
 <summary>Init function</summary>
 Initializes the environment, setting up the initial state and parameters.

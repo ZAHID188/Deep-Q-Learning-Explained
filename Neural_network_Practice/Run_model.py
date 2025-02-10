@@ -12,7 +12,7 @@ with open('scalers.pkl', 'rb') as f:
     loaded_scaler_y = scalers['scaler_y']
 
 # Make predictions
-new_X = np.array([[30], [34], [67], [345], [45]])
+new_X = np.array([[20], [30], [32], [33], [2]])
 new_X_scaled = loaded_scaler_X.transform(new_X)
 predictions_scaled = loaded_model.predict(new_X_scaled)
 predictions = loaded_scaler_y.inverse_transform(predictions_scaled)
