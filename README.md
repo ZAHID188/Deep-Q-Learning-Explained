@@ -33,18 +33,17 @@ Deep Q-Learning is a type of Reinforcement Learning (RL) algorithm. It combines 
 
 ## Let's look at the mathmetical terms.
 
-1. Q-Learning Basics:
+Q-Learning Basics:
 In classic Q-Learning, the agent learns a Q-table that stores Q-values for every state-action pair. The Q-table is updated using the Bellman Equation:
 
 $$Q(s, a) = Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right]$$
 
-
 ### Where:
 - \( Q(s, a) \): The current estimate of the action-value function for state \( s \) and action \( a \).
-- \( \alpha \): The learning rate, which determines how much new information overrides old information (typically between 0 and 1).
+-  &alpha; : The learning rate, which determines how much new information overrides old information (typically between 0 and 1).
 - \( r \): The reward received after taking action \( a \) in state \( s \).
-- \( \gamma \): The discount factor, which models the importance of future rewards (also between 0 and 1).
-- \( \max_{a'} Q(s', a') \): The maximum estimated action-value for the next state \( s' \) over all possible actions \( a' \).
+- &gamma;  : The discount factor, which models the importance of future rewards (also between 0 and 1).
+- max_{a'} Q(s', a'): The maximum estimated action-value for the next state \( s' \) over all possible actions \( a' \).
 
 ## Example
 
