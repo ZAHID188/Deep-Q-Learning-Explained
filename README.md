@@ -38,7 +38,6 @@ In classic Q-Learning, the agent learns a Q-table that stores Q-values for every
 
 $$Q(s, a) = Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right]$$
 
-$$\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)$$
 
 Where:
 - ( Q(s, a) ): Current Q-value for state ( s ) and action ( a ).
