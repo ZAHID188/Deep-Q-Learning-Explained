@@ -39,13 +39,12 @@ In classic Q-Learning, the agent learns a Q-table that stores Q-values for every
 $$Q(s, a) = Q(s, a) + \alpha \left[ r + \gamma \max_{a'} Q(s', a') - Q(s, a) \right]$$
 
 
-Where:
-- ( Q(s, a) ): Current Q-value for state ( s ) and action ( a ).
-- alpha : Learning rate (how quickly the agent learns).
-- ( r ): Reward received after taking action \( a \) in state \( s \).
-- ( gamma ): Discount factor (how much the agent cares about future rewards).
-- ( max_{a'} Q(s', a') ): Maximum Q-value for the next state \( s' \).
-
+### Where:
+- \( Q(s, a) \): The current estimate of the action-value function for state \( s \) and action \( a \).
+- \( \alpha \): The learning rate, which determines how much new information overrides old information (typically between 0 and 1).
+- \( r \): The reward received after taking action \( a \) in state \( s \).
+- \( \gamma \): The discount factor, which models the importance of future rewards (also between 0 and 1).
+- \( \max_{a'} Q(s', a') \): The maximum estimated action-value for the next state \( s' \) over all possible actions \( a' \).
 
 ## Example
 
